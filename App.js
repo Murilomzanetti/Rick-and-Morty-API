@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import ChracterListScreen from './screens/ChractersListScreen';
+import ChractersListScreen from './screens/ChractersListScreen';
+import CharacterDetailsScreen from './screens/CharacterDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +14,8 @@ export default function App() {
         initialRouteName="ChractersListScreen"
         screenOptions={{headerShown: false}}
       >
-        <Stack.Screen name="ChractersListScreen" component={ChracterListScreen}/>
+        <Stack.Screen name="ChractersListScreen" component={ChractersListScreen}/>
+        <Stack.Screen name="CharacterDetailsScreen" component={CharacterDetailsScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
