@@ -24,7 +24,7 @@ export default function ChractersList({navigation}) {
     if (loading) {
         return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="orange" />
+        <ActivityIndicator size="large" color="#08C952" />
         <Text style={styles.loadingText}>Carregando personagens...</Text>
       </View>
     );
@@ -51,25 +51,27 @@ export default function ChractersList({navigation}) {
 
   return (
     <FlatList style={styles.list} data={list} renderItem={({ item }) => <ChracterCard item={item} />} 
-      keyExtractor={item => item.id.toString()} // Garante chaves únicas
+      keyExtractor={item => item.id.toString()}
       contentContainerStyle={styles.flatListContent}
     />
   )
 }
 
 const styles = StyleSheet.create({
-   list: {
+    list: {
         flex: 1,
-        backgroundColor: '#262626',
+        backgroundColor: '#121212',
     },
     flatListContent: {
         padding: 10,
     },
     cardContainer: {
         flexDirection: 'row',
-        backgroundColor: '#444',
+        backgroundColor: '#2C2C2C',
         borderRadius: 10,
         marginBottom: 15,
+        borderWidth: 2,
+        borderColor: '#08C952', 
     },
     image: {
         width: 100, 
@@ -82,37 +84,37 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#fff',
+        color: '#FCE46D',
     },
     status: {
         fontSize: 14,
-        color: '#ccc',
+        color: 'white',
     },
     statusValue: {
         fontWeight: 'bold',
         marginLeft: 5,
     },
     alive: {
-        color: '#00ff00',
+        color: '#00FF00', 
     },
     dead: {
-        color: '#ff0000',
+        color: 'red', 
     },
     unknown: {
-        color: '#ffa500',
+        color: '#ffa500', 
     },
     species: {
         fontSize: 14,
-        color: '#ccc',
+        color: 'white', 
     },
     loadingContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#262626',
+        backgroundColor: '#121212',
     },
     loadingText: {
-        color: '#fff',
+        color: '#08C952', 
         marginTop: 10,
         fontSize: 16,
     }
